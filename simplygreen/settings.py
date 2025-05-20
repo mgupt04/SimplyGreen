@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-d%vi$v_8dg#3dvad6(fnu9i1mj77@7p#2kb_!jlzlpe=s!ll*+
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'django-azure-ayh5fwa5cmbrdwhy.canadacentral-01.azurewebsites.net']
-
+CSRF_TRUSTED_ORIGINS = ['https://django-azure-ayh5fwa5cmbrdwhy.canadacentral-01.azurewebsites.net']
 
 # Application definition
 
