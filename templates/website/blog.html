@@ -1,0 +1,120 @@
+{% extends 'website/base.html' %} {% load static %} {% block title %}Blog -
+Simply Green{% endblock %} {% block content %}
+<div class="blog-container">
+  <div class="blog-header">
+    <h1>Our Blog</h1>
+    <p>
+      Stay updated with our latest stories, recipes, and sustainability
+      initiatives
+    </p>
+  </div>
+
+  <div class="blog-grid">
+    {% for post in blog_posts %}
+    <div class="blog-card">
+      <div class="blog-content">
+        <div class="blog-date">{{ post.date }}</div>
+        <h2 class="blog-title">{{ post.title }}</h2>
+        <p class="blog-preview">{{ post.preview }}</p>
+        <a href="{% url 'blog_detail' post.id %}" class="read-more"
+          >Read More →</a
+        >
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .blog-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  .blog-header p {
+    color: #666;
+    font-size: 1.1em;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .blog-image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-content {
+    padding: 20px;
+  }
+
+  .blog-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  .blog-title {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .blog-preview {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .read-more {
+    display: inline-block;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .read-more:hover {
+    color: #388e3c;
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+{% endblock %}

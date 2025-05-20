@@ -1,0 +1,32 @@
+{% extends 'website/base.html' %}
+{% block title %}Cart - Simply Green{% endblock %}
+{% block content %}
+<h1 style="text-align: center">Your Cart</h1>
+
+<div class="cart-items">
+  {% for item in cart_items %}
+  <div class="cart-item">
+    <img class="cart-image" src="{{ item.menu_item.image.url}}" />
+    <div class="cart-item-info">
+      <div class="cart-item-header">{{ item.menu_item.name }}</div>
+      <div class="cart-item-price">${{ item.menu_item.price }}</div>
+      <div class="add-reduce-container">
+        <a href="{% url 'decrease_cart_item' item.id %}" class="add-btn">-</a>
+        <div class="cart-item-amount">{{item.quantity}}</div>
+        <a href="{% url 'increase_cart_item' item.id %}" class="add-btn">+</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>Your cart is empty.</p>
+  {% endfor %}
+</div>
+
+<div class="cart-total">
+  <div class="total-price">
+    <span style="font-weight: bold">Total:</span>
+    <span>${{ total_price }}</span>
+  </div>
+  <a href="/place-order" class="place-order-btn">Place Order</a>
+</div>
+{% endblock %}

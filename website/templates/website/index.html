@@ -1,0 +1,163 @@
+{% extends "website/layout.html" %}
+{% load static %}
+{% block title %}Home - Simply Green{% endblock %}
+
+{% block content %}
+    <section class="landing">
+        <div class="landing-text-container">
+            <div class="landing-header">
+                Sustainably Sourced, <br> <span style="color: #A9C1A9;">Deliciously </span>Served
+            </div>
+            <div class="landing-subtext">
+                Committed to simplicity, freshness, and sustainability since 2020.
+            </div>
+            <div class="buttons-container">
+                <button class="green-button">Order Now</button>
+                <button class="explore-button">Explore Menu</button>
+            </div>
+        </div>
+        <img src="{% static 'main/saladImage.png' %}" class="landing-image">
+    </section>
+    <section class="featured">
+        <div class="preheader">
+            FEATURED ON
+        </div>
+        <div class="featured-container">
+            <img src="{% static 'main/bonappLogo.svg' %}">
+            <img src="{% static 'main/michelinLogo.svg' %}">
+            <img src="{% static 'main/forbesLogo.svg' %}">
+            <img src="{% static 'main/tripLogo.svg' %}">
+        </div>
+    </section>
+
+    <section class="about-us">
+        <img class="about-us-image" src="{% static 'main/louisville.png'%}">
+        <div class="about-us-container">
+            <div class="about-us-preheader">ABOUT US</div>
+            <div class="header">
+                Who We Are
+            </div>
+            <div class="about-us-text">
+                At Simply Green, we're proud to call Louisville home and offer a fresh take on plant-based dining. Inspired by the city's vibrant culture, we celebrate sustainability, local ingredients, and meals that are as flavorful as they are kind to the planet.
+            </div>
+            <button class="green-button">Read More</button>
+        </div>
+    </section>
+
+    <section class="customer-picks">
+        <div class="preheader">CUSTOMER PICKS</div>
+        <div class="header">Top Dishes and Categories</div>
+        <div class="dishes-container">
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="{% static 'main/mainDish.svg' %}">
+                </div>
+                <div class="dish-name">Mains</div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="{% static 'main/sideDish.svg' %}">
+                </div>
+                <div class="dish-name">Sides</div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="{% static 'main/dessert.svg' %}">
+                </div>
+                <div class="dish-name">Desserts</div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="{% static 'main/drink.svg' %}">
+                </div>
+                <div class="dish-name">Browse All</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="signature-dishes">
+        <div class="preheader">SIGNATURE DISHES</div>
+        <div class="header">Explore Our Specialties</div>
+        <div class="dishes-container">
+            <div class="dish-item" id="dish-item">
+                <img src="{% static 'main/Fattoush.png' %}" alt="Fattoush Salad">
+                <div class="dish-info">
+                    <div class="salad-name">Fattoush Salad</div>
+                    <div class="salad-subtext">
+                        Crisp rolls stuffed with fresh vegetables and served with a tangy peanut dipping sauce.
+                    </div>
+                    <div class="order-text">Order Now →</div>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="{% static 'main/vegSalad.png' %}" alt="Vegetable Salad">
+                <div class="dish-info">
+                    <div class="salad-name">Vegetable Salad</div>
+                    <div class="salad-subtext">
+                        Crisp rolls stuffed with fresh vegetables and served with a tangy peanut dipping sauce.
+                    </div>
+                    <div class="order-text">Order Now →</div>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="{% static 'main/eggSalad.png' %}" alt="Egg Vegi Salad">
+                <div class="dish-info">
+                    <div class="salad-name">Egg Vegi Salad</div>
+                    <div class="salad-subtext">
+                        Crisp rolls stuffed with fresh vegetables and served with a tangy peanut dipping sauce.
+                    </div>
+                    <div class="order-text">Order Now →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="locations" id="locations">
+        <div class="preheader">OUR LOCATIONS</div>
+        <div class="header">Locations Around the Country</div>
+        <div class="locations-container">
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">Louisville, KY</div>
+                    <div class="location-address">5678 Greenleaf Avenue, Crescent Hill, Louisville, KY, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">Chicago, IL</div>
+                    <div class="location-address">9012 Riverwalk Lane, Lincoln Park, Chicago, IL, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">New York City, NY</div>
+                    <div class="location-address">123 Madison Square North, Manhattan, New York, NY, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">Austin, TX</div>
+                    <div class="location-address">4501 Sunshine Boulevard, South Congress, Austin, TX, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">Los Angeles, CA</div>
+                    <div class="location-address">7832 Sunset Drive, West Hollywood, Los Angeles, CA, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+            <div class="location-item">
+                <div class="location-info">
+                    <div class="location-name">Atlanta, GA</div>
+                    <div class="location-address">3205 Peachtree Street, Midtown, Atlanta, GA, USA</div>
+                    <button class="book-reservation">Book Reservation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %} 

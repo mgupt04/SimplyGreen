@@ -1,0 +1,105 @@
+<!-- your_app/templates/contact.html -->
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Origin Kitchen - Contact Us{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Contact Us</h1>
+      <p class="hero-subtitle">We’d Love to Hear From You</p>
+    </div>
+    <div class="hero-texture"></div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,0 C280,120 720,120 1440,0 L1440,120 L0,120 Z" fill="currentColor"/>
+    </svg>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section animate-on-scroll">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-content">
+          <h2 class="section-title">Get in Touch</h2>
+          <div class="section-divider"></div>
+          <p class="form-intro">Have a question, reservation request, or feedback? Fill out the form below, and we’ll respond as soon as possible.</p>
+          <form method="POST" class="contact-form">
+            {% csrf_token %}
+            <div class="form-group slide-in-left">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group slide-in-right">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group slide-in-left">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="Subject">
+            </div>
+            <div class="form-group slide-in-right">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="contact-info-section animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Visit Us</h2>
+      <div class="section-divider"></div>
+      <div class="contact-info-content">
+        <div class="info-item slide-in-left">
+          <i class="bi bi-geo-alt-fill"></i>
+          <h3>Address</h3>
+          <p>123 Green Lane, Sustainable City, SC 90210</p>
+        </div>
+        <div class="info-item slide-in-right">
+          <i class="bi bi-telephone-fill"></i>
+          <h3>Phone</h3>
+          <p>(555) 123-4567</p>
+        </div>
+        <div class="info-item slide-in-left">
+          <i class="bi bi-envelope-fill"></i>
+          <h3>Email</h3>
+          <p>info@originkitchen.com</p>
+        </div>
+      </div>
+      <!-- Google Map Embed -->
+      <div class="map-embed slide-in-right">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509371!2d-122.4194155846814!3d37.774929279759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjciTiAxMjLCsDI1JzA5LjkiVw!5e0!3m2!1sen!2sus!4v1630000000000!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Animations -->
+  <script>
+    // Scroll Animation for Elements with .animate-on-scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+{% endblock %}

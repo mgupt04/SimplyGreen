@@ -1,0 +1,197 @@
+<!-- your_app/templates/about.html -->
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Origin Kitchen - About Us{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-overlay">
+      <h1 class="hero-title">About Origin Kitchen</h1>
+      <p class="hero-subtitle">Rooted in Sustainability, Inspired by Nature</p>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,0 C280,120 720,120 1440,0 L1440,120 L0,120 Z" fill="currentColor"/>
+    </svg>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="about-intro animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Our Story</h2>
+      <div class="section-divider"></div>
+      <p>At Origin Kitchen, we’re more than just a restaurant—we’re a celebration of fresh, vegetarian dining that honors the earth and its bounty. Our mission is to bring you meals that are sustainably sourced, locally grown, and crafted with care, ensuring every bite reflects our commitment to quality, creativity, and the planet.</p>
+      <p>Founded with a vision to redefine vegetarian cuisine, we draw inspiration from the natural world and the rich traditions of global culinary arts. Our open kitchen invites you to witness the magic of food preparation, while our partnerships with local farmers ensure that every ingredient tells a story of sustainability and care. Join us on a journey where every meal is a testament to our love for the planet and the art of dining.</p>
+    </div>
+  </section>
+
+  <!-- Farm to Table Section -->
+  <section class="about-section farm-to-table animate-on-scroll">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-text slide-in-left">
+          <h2 class="section-title">Farm to Table</h2>
+          <div class="section-divider"></div>
+          <p>Our commitment to serving the best-tasting food begins with ensuring our produce is authentic and organic. We partner with local farmers and markets who share our passion for sustainability, visiting farms regularly to inspect soil health, water conservation, and pesticide-free practices. We respect the farmers’ livelihood as much as the food itself, building relationships that go beyond business.</p>
+          <p>As an organic restaurant, transparency is at our core. Our open kitchen design lets you watch your meals being prepared in real time, and QR codes on our menus provide detailed information about our farms and farmers. We believe in upholding your trust by showing exactly where your food comes from and how it’s handled.</p>
+          <p>We also prioritize the health of the land. Through long-term sustainability methods like crop rotation and seasonal crops, we preserve soil nutrients, promote biodiversity, and deliver rich, diverse flavors to your plate. Our farm visits ensure that we maintain the highest standards, and we often host farm-to-table events where you can meet the farmers who grow your food.</p>
+        </div>
+        <div class="section-image slide-in-right">
+          <img src="https://images.unsplash.com/photo-1598033129183-c4f50cd221f5?auto=format&fit=crop&w=800&q=80" alt="Farm to Table">
+          <p class="image-credit">Image by <a href="https://unsplash.com/photos/assorted-vegetables-on-brown-wooden-table-5u_9tHe0jM" target="_blank">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef Curated Dishes Section -->
+  <section class="about-section chef-curated animate-on-scroll">
+    <div class="container">
+      <div class="section-content reverse">
+        <div class="section-text slide-in-right">
+          <h2 class="section-title">Chef Curated Dishes</h2>
+          <div class="section-divider"></div>
+          <p>Presentation is key to enhancing your dining experience, and at Origin Kitchen, every dish tells a story—from the origin of its ingredients to the passion and creativity of our chefs. Our world-renowned chefs, often featured on platforms like MasterChef and Hell's Kitchen, draw inspiration from global cuisines and traditions.</p>
+          <p>They ensure every detail, from sourcing to plating, is handled with care and diligence. Our chefs pay homage to the rich heritage and cultural values that inspire their creations, blending innovation with tradition to deliver dishes that are not only unique but also a celebration of culinary storytelling.</p>
+          <p>Our seasonal menus reflect the freshest ingredients available, and our chefs regularly collaborate with farmers to create dishes that highlight the natural flavors of each ingredient. From Moroccan-inspired vegan balls to classic vegetarian pizzas, every plate is a work of art designed to delight your senses.</p>
+        </div>
+        <div class="section-image slide-in-left">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Chef Curated Dishes">
+          <p class="image-credit">Image by <a href="https://unsplash.com/photos/person-cooking-on-kitchen-counter-vF7qxt_5tCI" target="_blank">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability Section -->
+  <section class="about-section sustainability animate-on-scroll">
+    <div class="container">
+      <div class="section-content">
+        <div class="section-text slide-in-left">
+          <h2 class="section-title">Sustainability</h2>
+          <div class="section-divider"></div>
+          <p>We invest in sustainable methods at every stage, from procurement to consumption. Food is a precious resource, and we honor it by minimizing waste—donating leftovers to local food banks and drives to ensure everyone has access to good food. Our packaging reflects this commitment, sourced from TotalEnergies, the world’s leading supplier of biodegradable plastic. We use plant-based containers and, during special occasions, serve on palm leaf plates, embracing the wisdom of dining in harmony with nature.</p>
+          <p>Our dedication extends to energy and transportation. Solar energy powers our indoor appliances like refrigerators and ovens, as well as outdoor grills and patio heaters, significantly reducing our ecological footprint. We’ve also invested in electric vehicles (EVs) for deliveries, optimizing routes with heatmaps to reduce delivery times and carbon emissions responsibly.</p>
+          <p>We encourage our customers to join us in this journey by offering promotional deals for those who bring their own containers, rewarding them with gifts and discounts. Additionally, we host workshops on sustainable living, teaching our community how to reduce waste and live in harmony with the environment.</p>
+        </div>
+        <div class="section-image slide-in-right">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Sustainability">
+          <p class="image-credit">Image by <a href="https://unsplash.com/photos/white-and-black-solar-panel-system-on-green-grass-field-under-blue-sky-during-daytime-fd_9tHe0jM" target="_blank">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section with 3D Card Flip -->
+  <section class="about-section our-values">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="section-divider"></div>
+      <p class="hover-note">Hover to Reveal More About Our Values</p>
+      <div class="values-cards">
+        <div class="value-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Quality</h3>
+              <p class="card-subtitle">Uncompromising Standards</p>
+              <div class="card-icon"><i class="bi bi-star-fill"></i></div>
+              <p>We prioritize the highest standards in every ingredient, ensuring that only the freshest, organic produce makes it to your plate.</p>
+            </div>
+            <div class="card-back">
+              <h3>Quality</h3>
+              <p class="card-subtitle">Our Commitment to Excellence</p>
+              <p>Every ingredient at Origin Kitchen undergoes rigorous quality checks. We visit farms weekly to ensure soil health and pesticide-free practices, guaranteeing that our dishes are not only delicious but also safe and sustainable. Our open kitchen allows you to see the care we put into every meal, reflecting our dedication to transparency and trust.</p>
+            </div>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Creativity</h3>
+              <p class="card-subtitle">Innovative Culinary Arts</p>
+              <div class="card-icon"><i class="bi bi-brush-fill"></i></div>
+              <p>Our chefs blend global inspirations to craft innovative dishes that tell a story and delight your senses.</p>
+            </div>
+            <div class="card-back">
+              <h3>Creativity</h3>
+              <p class="card-subtitle">A Fusion of Tradition & Innovation</p>
+              <p>Our chefs, featured on MasterChef and Hell's Kitchen, draw from global cuisines to create dishes that honor cultural heritage while pushing culinary boundaries. From Moroccan vegan balls to vegetarian pizzas, each dish is a masterpiece of flavor and presentation, designed to inspire and delight our guests.</p>
+            </div>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Community</h3>
+              <p class="card-subtitle">Building Connections</p>
+              <div class="card-icon"><i class="bi bi-people-fill"></i></div>
+              <p>We support local farmers and food banks, fostering a community that values sustainability and shared nourishment.</p>
+            </div>
+            <div class="card-back">
+              <h3>Community</h3>
+              <p class="card-subtitle">Nourishing Together</p>
+              <p>We partner with local farmers to source our ingredients, ensuring fair wages and sustainable practices. Leftover food is donated to food banks, and we host community events like farm tours and sustainability workshops to educate and connect with our guests, building a stronger, more conscious community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section with Sticky Image -->
+  <section class="about-section menu">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+      <div class="section-divider"></div>
+      <div class="menu-content">
+        <div class="menu-image-sticky">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Vegetarian Meal">
+          <p class="image-credit">Image by <a href="https://unsplash.com/photos/flat-lay-photography-of-vegetable-salad-on-plate-5L4XAgx0cLE" target="_blank">Unsplash</a></p>
+        </div>
+        <div class="menu-categories">
+          <div class="menu-category animate-on-scroll">
+            <h3>Appetizers</h3>
+            <p>Chickpea & Spinach Curry - ~350 Cal, $14.99<br>Zucchini Noodles with Pesto - ~300 Cal, $10.99<br>Tofu & Vegetable Stir-Fry - ~400 Cal, $12.99<br>Vegetable Samosas - ~200 Cal (per serving), $11.99<br>Caprese Skewers - ~150 Cal, $8.99<br>Falafel with Hummus - ~400 Cal, $14.99</p>
+          </div>
+          <div class="menu-category animate-on-scroll">
+            <h3>Entrees</h3>
+            <p>Moroccan Vegan Balls - ~350 Cal, $14.50<br>Vegetarian Pizza - ~800 Cal, $16.99<br>Jalapeno Burger - ~500 Cal, $14.99<br>Classic Vegetarian Chili - ~350 Cal, $14.99<br>Veggie Burger - ~450 Cal, $16.99<br>Veggie Tacos - ~300 Cal, $13.99</p>
+          </div>
+          <div class="menu-category animate-on-scroll">
+            <h3>Drinks</h3>
+            <p>Fruit Smoothie - ~200 Cal, $3.99<br>Soda - ~150 Cal, $14.99<br>Mint Lemonade - ~150 Cal, $14.99<br>Coffee - ~5 Cal (black), $14.99<br>Limeade - ~180 Cal, $14.99<br>Wine - ~120 Cal (per glass), $5.99 - $8.99</p>
+          </div>
+          <div class="menu-category animate-on-scroll">
+            <h3>Desserts</h3>
+            <p>Fruit Sorbet - ~150 Cal, $6.99<br>Lemon Cake - ~250 Cal, $5.99<br>Sticky Toffee Pudding - ~400 Cal, $4.99<br>Apple Crumble - ~350 Cal, $14.99<br>Chocolate or Vanilla Ice Cream - ~200 Cal, $14.99<br>Vegetarian Cheesecake - ~350 Cal, $14.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Animations -->
+  <script>
+    // Scroll Animation for Elements with .animate-on-scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+{% endblock %}

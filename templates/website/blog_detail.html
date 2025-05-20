@@ -1,0 +1,88 @@
+{% extends 'website/base.html' %} {% load static %} {% block title %}{{
+post.title }} - Simply Green{% endblock %} {% block content %}
+<div class="blog-detail-container">
+  <div class="blog-detail-header">
+    <h1>{{ post.title }}</h1>
+    <div class="blog-meta">Posted on {{ post.date_posted|date:"F j, Y" }}</div>
+  </div>
+
+  {% if post.image %}
+  <div class="blog-detail-image">
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+  </div>
+  {% endif %}
+
+  <div class="blog-detail-content">{{ post.content|linebreaks }}</div>
+
+  <div class="blog-navigation">
+    <a href="{% url 'blog' %}" class="back-to-blog">← Back to Blog</a>
+  </div>
+</div>
+
+<style>
+  .blog-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .blog-detail-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .blog-detail-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  .blog-meta {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .blog-detail-image {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .blog-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .blog-detail-content {
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.1em;
+  }
+
+  .blog-navigation {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .back-to-blog {
+    display: inline-block;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .back-to-blog:hover {
+    color: #388e3c;
+  }
+
+  @media (max-width: 768px) {
+    .blog-detail-container {
+      padding: 20px;
+    }
+  }
+</style>
+{% endblock %}

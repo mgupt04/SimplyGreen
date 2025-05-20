@@ -1,0 +1,31 @@
+{% extends "website/layout.html" %}
+
+{% block title %}Shopping Cart - Simply Green{% endblock %}
+
+{% block content %}
+    <h1>Your Cart</h1>
+    
+    <div class="cart-container">
+        <div class="cart-items">
+            <!-- Cart items will be dynamically populated -->
+            <p class="empty-cart-message">Your cart is empty</p>
+        </div>
+
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Tax:</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+{% endblock %} 

@@ -1,0 +1,99 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Origin Kitchen - Menu{% endblock %}
+
+{% block content %}
+  <!-- Menu Filter and Items Section -->
+  <section class="menu-section animate-on-scroll">
+    
+<center style="margin-bottom: 50px;"><h1>Our Menu</h1></center>
+    <div class="container">
+      <!-- Search Bar -->
+      <div class="menu-search slide-in-left">
+        <form method="GET" action="{% url 'menu' %}" class="search-form">
+          <input type="text" name="search" placeholder="Search menu items..." value="{{ request.GET.search }}">
+          <button type="submit" class="search-btn"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filter slide-in-right">
+        <a href="{% url 'menu' %}?category=appetizers" class="btn {% if request.GET.category == 'appetizers' %}active{% endif %}">Appetizers</a>
+        <a href="{% url 'menu' %}?category=soups_salads" class="btn {% if request.GET.category == 'soups_salads' %}active{% endif %}">Salads and Bowls</a>
+        <a href="{% url 'menu' %}?category=mains" class="btn {% if request.GET.category == 'mains' %}active{% endif %}">Handhelds</a>
+        <a href="{% url 'menu' %}?category=sides" class="btn {% if request.GET.category == 'sides' %}active{% endif %}">Entrees</a>
+        <a href="{% url 'menu' %}?category=desserts" class="btn {% if request.GET.category == 'desserts' %}active{% endif %}">Desserts</a>
+        <a href="{% url 'menu' %}?category=drinks" class="btn {% if request.GET.category == 'drinks' %}active{% endif %}">Drinks</a>
+      </div>
+
+      <!-- Featured Item -->
+      {% if featured_item %}
+        <div class="featured-item animate-on-scroll">
+          <h2 class="section-title">Featured Item</h2>
+          <div class="section-divider"></div>
+          <div class="menu-item featured">
+            <img src="{{ featured_item.image.url }}" alt="{{ featured_item.name }}">
+            <div class="item-details">
+              <div class="item-name">{{ featured_item.name }}</div>
+              <div class="item-desc">{{ featured_item.description }}</div>
+              <div class="item-price-container">
+                <div class="left-add-container">
+                  <div class="item-price">${{ featured_item.price }}</div>
+                  <div class="calories">{{ featured_item.calories }} calories</div>
+                </div>
+                <a href="/add-to-cart/{{ featured_item.id }}" class="add-btn">+</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Menu Items -->
+      <div class="menu-items">
+        {% for item in items %}
+          <div class="menu-item animate-on-scroll">
+            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            <div class="item-details">
+              <div class="item-name">{{ item.name }}</div>
+              <div class="item-desc">{{ item.description }}</div>
+              <div class="item-price-container">
+                <div class="left-add-container">
+                  <div class="item-price">${{ item.price }}</div>
+                  <div class="calories">{{ item.calories }} calories</div>
+                </div>
+                <a href="/add-to-cart/{{ item.id }}" class="add-btn">+</a>
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          <p class="no-items">No items found in this category.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Animations -->
+  <script>
+    // Scroll Animation for Elements with .animate-on-scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+{% endblock %}
